@@ -8,7 +8,7 @@ export function DataProvider({ children }) {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('/data/incidents.json')
+    fetch(`${import.meta.env.BASE_URL}data/incidents.json`)
       .then(r => r.json())
       .then(d => { setData(d); setLoading(false) })
       .catch(e => { setError(e.message); setLoading(false) })
