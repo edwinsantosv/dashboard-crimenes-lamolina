@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(python process_data.py)",
+      "Bash(npm run *)",
+      "PowerShell(Rename-Item \"C:\\\\Users\\\\edwin\\\\Repositories\\\\Data Science\\\\dashboard-crimenes-lamolina\\\\src\\\\hooks\\\\useData.js\" \"useData.jsx\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('public/data/incidents.json'\\)\\); print\\('incidents:', len\\(d['incidents']\\)\\); print\\('geocoded:', len\\(d.get\\('geocoded_locations', {}\\)\\)\\); print\\('keys sample:', list\\(d.get\\('geocoded_locations', {}\\).keys\\(\\)\\)[:3]\\)\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('public/data/incidents.json', encoding='utf-8'\\)\\); print\\('incidents:', len\\(d['incidents']\\)\\); print\\('geocoded:', len\\(d.get\\('geocoded_locations', {}\\)\\)\\); print\\('meta:', d.get\\('meta', {}\\)\\)\")",
+      "Bash(npx vite *)",
+      "Bash(node -e \"const d = require\\('./public/data/incidents.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(d\\), null, 2\\).slice\\(0,500\\)\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(gh auth *)",
+      "Bash(gh api *)",
+      "Bash(git --version)",
+      "Bash(where git *)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
