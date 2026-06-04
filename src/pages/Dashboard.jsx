@@ -551,28 +551,12 @@ export default function Dashboard() {
       <Sectores incidents={data?.incidents || []} />
 
       {/* ── Footer ── */}
-      <div style={{ marginTop: 32, paddingTop: 20, borderTop: '1px solid var(--border)' }}>
-        {/* Logos */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', marginBottom: 16 }}>
-          {[
-            { src: '/dashboard-crimenes-lamolina/logo-pnp.png',  alt: 'Policía Nacional del Perú' },
-            { src: '/dashboard-crimenes-lamolina/logo-idd.png',  alt: 'Instituto para la Democracia Digital' },
-            { src: '/dashboard-crimenes-lamolina/logo-acl.png',  alt: 'Azul Center Labs' },
-            { src: '/dashboard-crimenes-lamolina/logo-eia.png',  alt: 'Escuela de Inteligencia Artificial' },
-          ].map(({ src, alt }) => (
-            <img key={src} src={src} alt={alt} title={alt} className="footer-logo"
-              style={{ height: 32, width: 'auto', objectFit: 'contain' }} />
-          ))}
-        </div>
-
-        {/* Créditos */}
-        <div style={{ fontSize: 11, color: 'var(--fg-dim)', lineHeight: 1.6 }}>
-          <span>Fuente: Comisaría PNP Santa Felicia – La Molina · Datos SIDPOL · 2022–2026</span>
-          <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
-          <span>Desarrollado por <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Instituto para la Democracia Digital (IDD)</strong> · <a href="https://www.idd.pe" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-dim)', textDecoration: 'underline' }}>idd.pe</a></span>
-          <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
-          <span>Director del proyecto: <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Edwin Santos Vidal</strong></span>
-        </div>
+      <div style={{ marginTop: 32, paddingTop: 16, borderTop: '1px solid var(--border)', fontSize: 11, color: 'var(--fg-dim)', lineHeight: 1.6 }}>
+        <span>Fuente: Comisaría PNP Santa Felicia – La Molina · Datos SIDPOL · 2022–2026</span>
+        <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
+        <span>Desarrollado por <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Instituto para la Democracia Digital (IDD)</strong> · <a href="https://www.idd.pe" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-dim)', textDecoration: 'underline' }}>idd.pe</a></span>
+        <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
+        <span>Director del proyecto: <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Edwin Santos Vidal</strong></span>
       </div>
     </>
   )

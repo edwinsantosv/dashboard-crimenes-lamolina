@@ -820,17 +820,19 @@ body {
   .filter-chip     { padding: 4px 10px; font-size: 11px; }
 }
 
-/* Footer logos */
-.footer-logo {
-  opacity: 0.65;
-  filter: grayscale(20%);
-  transition: opacity 0.2s;
-}
-.footer-logo:hover { opacity: 1; }
-
-/* Sidebar PNP logo */
+/* Sidebar PNP logo (brand area) */
 .sidebar-pnp-logo {
   width: 36px;
   height: 36px;
   object-fit: contain;
 }
+
+/* Sidebar footer logos */
+.sidebar-footer-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.sidebar-footer-logo:hover { opacity: 1; }

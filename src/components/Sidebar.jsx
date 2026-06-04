@@ -48,7 +48,6 @@ export default function Sidebar({ isOpen, onClose, theme, onToggleTheme }) {
 
       <div className="sidebar-brand">
         <div className="sidebar-brand-mark">
-          <img src="/dashboard-crimenes-lamolina/logo-pnp.png" alt="PNP" className="sidebar-pnp-logo" />
           <span className="sidebar-brand-name">La Molina<br />Datos de Seguridad</span>
         </div>
         <div className="sidebar-brand-sub">
@@ -75,6 +74,11 @@ export default function Sidebar({ isOpen, onClose, theme, onToggleTheme }) {
           <IconTable /> Tabla interactiva
         </NavLink>
       </nav>
+
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, padding: '16px 16px 0' }}>
+        <img src="/dashboard-crimenes-lamolina/logo-pnp.png" alt="PNP" className="sidebar-footer-logo" style={{ height: 52 }} />
+        <img src="/dashboard-crimenes-lamolina/logo-idd.png" alt="IDD" className="sidebar-footer-logo" style={{ height: 52 }} />
+      </div>
 
       <div className="theme-toggle">
         <button className={`theme-toggle-btn${!isDark ? ' active' : ''}`} onClick={() => !isDark || onToggleTheme()}>
