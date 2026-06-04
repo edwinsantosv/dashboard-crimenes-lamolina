@@ -75,9 +75,32 @@ export default function Sidebar({ isOpen, onClose, theme, onToggleTheme }) {
         </NavLink>
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, padding: '16px 16px 0' }}>
-        <img src="/dashboard-crimenes-lamolina/logo-pnp.png" alt="PNP" className="sidebar-footer-logo" style={{ height: 52 }} />
-        <img src="/dashboard-crimenes-lamolina/logo-idd.png" alt="IDD" className="sidebar-footer-logo" style={{ height: 52 }} />
+      <div style={{ padding: '16px 16px 0', display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {/* Entidad usuaria */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <img src="/dashboard-crimenes-lamolina/logo-pnp.png" alt="PNP" className="sidebar-footer-logo" style={{ height: 40, width: 40, flexShrink: 0 }} />
+          <div style={{ fontSize: 10, color: 'var(--fg-dim)', lineHeight: 1.4 }}>
+            <div style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Entidad usuaria</div>
+            Comisaría PNP Santa Felicia – La Molina
+          </div>
+        </div>
+        {/* Desarrollado por */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <img src="/dashboard-crimenes-lamolina/logo-idd.png" alt="IDD" className="sidebar-footer-logo" style={{ height: 40, width: 40, flexShrink: 0, objectFit: 'contain' }} />
+          <div style={{ fontSize: 10, color: 'var(--fg-dim)', lineHeight: 1.4 }}>
+            <div style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Desarrollado por</div>
+            Instituto para la Democracia Digital (IDD)<br />
+            <a href="https://www.idd.pe" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>www.idd.pe</a>
+          </div>
+        </div>
+        {/* Director */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ width: 40, flexShrink: 0 }} />
+          <div style={{ fontSize: 10, color: 'var(--fg-dim)', lineHeight: 1.4 }}>
+            <div style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Director del proyecto</div>
+            Edwin Santos Vidal
+          </div>
+        </div>
       </div>
 
       <div className="theme-toggle">
