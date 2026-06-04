@@ -151,7 +151,7 @@ function KPIGrid({ incidents, allIncidents, activeYears, onToggleYear, ytdMaxMon
             <div className="kpi-value num" style={{ color: 'var(--fg)' }}>
               {val.toLocaleString()}
             </div>
-            {delta != null && (
+            {delta != null && Math.abs(delta) < 500 && (
               <div className={`kpi-delta ${delta > 0 ? 'up' : 'down'}`}>
                 {delta > 0 ? '▲' : '▼'} {Math.abs(delta).toFixed(1)}%
                 <span style={{ fontSize: 10, fontWeight: 400, color: 'var(--fg-dim)', marginLeft: 2 }}>vs {prevLabel}</span>
@@ -315,7 +315,7 @@ function HourBands({ incidents }) {
 
 // ── 6. Slope chart + Donut ─────────────────────────────────────────────────
 const SLOPE_TABS = [
-  { id: 'yoy',  label: 'YOY',        from: 2025, to: 2026 },
+  { id: 'yoy',  label: '2025 → 2026', from: 2025, to: 2026 },
   { id: '2425', label: '2024 → 2025', from: 2024, to: 2025 },
   { id: '2324', label: '2023 → 2024', from: 2023, to: 2024 },
 ]
@@ -550,8 +550,29 @@ export default function Dashboard() {
       {/* ── 8. Sector list ── */}
       <Sectores incidents={data?.incidents || []} />
 
-      <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid var(--border)', fontSize: 11, color: 'var(--fg-dim)' }}>
-        Fuente: Comisaría La Molina · Datos oficiales SIDPOL · 2022–2026
+      {/* ── Footer ── */}
+      <div style={{ marginTop: 32, paddingTop: 20, borderTop: '1px solid var(--border)' }}>
+        {/* Logos */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', marginBottom: 16 }}>
+          {[
+            { src: '/dashboard-crimenes-lamolina/logo-pnp.png',  alt: 'Policía Nacional del Perú' },
+            { src: '/dashboard-crimenes-lamolina/logo-idd.png',  alt: 'Instituto para la Democracia Digital' },
+            { src: '/dashboard-crimenes-lamolina/logo-acl.png',  alt: 'Azul Center Labs' },
+            { src: '/dashboard-crimenes-lamolina/logo-eia.png',  alt: 'Escuela de Inteligencia Artificial' },
+          ].map(({ src, alt }) => (
+            <img key={src} src={src} alt={alt} title={alt} className="footer-logo"
+              style={{ height: 32, width: 'auto', objectFit: 'contain' }} />
+          ))}
+        </div>
+
+        {/* Créditos */}
+        <div style={{ fontSize: 11, color: 'var(--fg-dim)', lineHeight: 1.6 }}>
+          <span>Fuente: Comisaría PNP Santa Felicia – La Molina · Datos SIDPOL · 2022–2026</span>
+          <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
+          <span>Desarrollado por <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Instituto para la Democracia Digital (IDD)</strong> · <a href="https://www.idd.pe" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-dim)', textDecoration: 'underline' }}>idd.pe</a></span>
+          <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
+          <span>Director del proyecto: <strong style={{ fontWeight: 600, color: 'var(--fg-dim)' }}>Edwin Santos Vidal</strong></span>
+        </div>
       </div>
     </>
   )

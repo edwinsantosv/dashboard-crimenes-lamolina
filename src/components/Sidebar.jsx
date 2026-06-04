@@ -48,7 +48,7 @@ export default function Sidebar({ isOpen, onClose, theme, onToggleTheme }) {
 
       <div className="sidebar-brand">
         <div className="sidebar-brand-mark">
-          <IconShield />
+          <img src="/dashboard-crimenes-lamolina/logo-pnp.png" alt="PNP" className="sidebar-pnp-logo" />
           <span className="sidebar-brand-name">La Molina<br />Datos de Seguridad</span>
         </div>
         <div className="sidebar-brand-sub">

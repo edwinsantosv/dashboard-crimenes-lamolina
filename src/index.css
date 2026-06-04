@@ -819,3 +819,18 @@ body {
   .page-header h1  { font-size: 18px; }
   .filter-chip     { padding: 4px 10px; font-size: 11px; }
 }
+
+/* Footer logos */
+.footer-logo {
+  opacity: 0.65;
+  filter: grayscale(20%);
+  transition: opacity 0.2s;
+}
+.footer-logo:hover { opacity: 1; }
+
+/* Sidebar PNP logo */
+.sidebar-pnp-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
